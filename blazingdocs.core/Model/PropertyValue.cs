@@ -8,8 +8,5 @@ namespace blazingdocs.core.Model
     {
         public int PropertyValueId { get; set; }
         public string Value { get; set; }
-
-        public int PropertyFieldId { get; set; }
-        public PropertyField PropertyField { get; set; }
     }
 }
