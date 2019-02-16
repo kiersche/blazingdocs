@@ -4,7 +4,7 @@ using System.Text;
 
 namespace blazingdocs.core.Model
 {
-    public enum PropertyType { Text, Number, Date, Time, DateTime }
+    public enum PropertyType { Text, Number, Float, Money, Date, DateTime }
 
     public class PropertyField
     {
