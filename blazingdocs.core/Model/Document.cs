@@ -13,6 +13,9 @@ namespace blazingdocs.core.Model
         public int PhysicalDocumentId { get; set; }
         public PhysicalDocument PhysicalDocument { get; set; }
 
+        public int? DocumentTypeId { get; set; }
+        public DocumentType DocumentType { get; set; }
+
         public List<Property> Properties { get; set; }
         public List<File> Files { get; set; }
 
