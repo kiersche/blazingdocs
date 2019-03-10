@@ -9,6 +9,13 @@ namespace blazingdocs.core.Model
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Document> Documents { get; set; }
+        public DbSet<DocumentType> DocumentTypes { get; set; }
+        public DbSet<File> Files { get; set; }
+        public DbSet<PhysicalDocument> PhysicalDocuments { get; set; }
+        public DbSet<PhysicalDocumentContainer> PhysicalDocumentContainers { get; set; }
+        public DbSet<Property> Properties { get; set; }
+        public DbSet<PropertyField> PropertyFields { get; set; }
+        public DbSet<PropertyValue> PropertyValues { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
