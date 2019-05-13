@@ -10,7 +10,6 @@ namespace blazingdocs.core.Model
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }
 
-        public int PhysicalDocumentId { get; set; }
         public PhysicalDocument PhysicalDocument { get; set; }
 
         public int? DocumentTypeId { get; set; }
