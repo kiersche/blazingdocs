@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,6 +32,16 @@ namespace blazingdocs.core.Model
                 .HasOne(cd => cd.Document)
                 .WithMany(cd => cd.CategoryDocuments)
                 .HasForeignKey(cd => cd.DocumentId);
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (optionsBuilder.IsConfigured)
+                return;
+
+            optionsBuilder.UseMySql("Server=localhost;Database=blazingdocs;User=blazingprod;Password=blazingprod;",
+                    mySqlOptions => { mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); }
+            );
         }
     }
 }
