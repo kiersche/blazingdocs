@@ -1,9 +1,13 @@
+using blazingdocs.core.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using System;
 using System.Linq;
 
 namespace blazingdocs.Server
@@ -20,6 +24,11 @@ namespace blazingdocs.Server
                 opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
                     new[] { "application/octet-stream" });
             });
+            services.AddDbContext<DmsDbContext>(
+                optionsBuilder => optionsBuilder.UseMySql(
+                    "Server=localhost;Database=blazingdocs;User=blazingprod;Password=blazingprod;",
+                    mySqlOptions => { mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); }
+            ));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

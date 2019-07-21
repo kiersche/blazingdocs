@@ -43,5 +43,10 @@ namespace blazingdocs.core.Model
                     mySqlOptions => { mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); }
             );
         }
+
+        public DmsDbContext() { }
+
+        public DmsDbContext(DbContextOptions<DmsDbContext> options) : base(options)
+        { }
     }
 }

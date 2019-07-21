@@ -8,10 +8,13 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="3.0.0-preview6.19307.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview6.19307.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\blazingdocs.Client\blazingdocs.Client.csproj" />
+    <ProjectReference Include="..\blazingdocs.core\blazingdocs.core.csproj" />
     <ProjectReference Include="..\blazingdocs.Shared\blazingdocs.Shared.csproj" />
   </ItemGroup>
 
