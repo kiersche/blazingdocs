@@ -1,4 +1,5 @@
 using blazingdocs.core.Model;
+using blazingdocs.core.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -29,6 +30,9 @@ namespace blazingdocs.Server
                     "Server=localhost;Database=blazingdocs;User=blazingprod;Password=blazingprod;",
                     mySqlOptions => { mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); }
             ));
+
+            services.AddTransient(typeof(IEntityPropertyUpdater<,>), typeof(EntityPropertyUpdater<,>));
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
