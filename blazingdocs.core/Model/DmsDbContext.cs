@@ -39,8 +39,10 @@ namespace blazingdocs.core.Model
             if (optionsBuilder.IsConfigured)
                 return;
 
-            optionsBuilder.UseMySql("Server=localhost;Database=blazingdocs;User=blazingprod;Password=blazingprod;",
-                    mySqlOptions => { mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); }
+            //optionsBuilder.UseMySql("Server=localhost;Database=blazingdocs;User=blazingprod;Password=blazingprod;",
+            //        mySqlOptions => { mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); }
+            optionsBuilder.UseMySql("Server=localhost;Database=blazingdocs.dev;User=blazingdev;Password=blazingdev;",
+                 mySqlOptions => { mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); }
             );
         }
 
