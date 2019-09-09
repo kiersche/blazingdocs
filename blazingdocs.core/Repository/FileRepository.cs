@@ -10,6 +10,7 @@ namespace blazingdocs.core.Repository
     public interface IFileRepository
     {
         Task AddFile(File file);
+        Task<File> GetFileById(int id);
         Task UpdateFileValues(int id, Action<File> valueUpdater);
     }
 
