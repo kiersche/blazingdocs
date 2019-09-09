@@ -35,7 +35,8 @@ namespace blazingdocs.core.Repository
 
         public async Task<File> GetFileById(int id)
         {
-            return await dmsDbContext.Files.FirstOrDefaultAsync(_ => _.FileId == id);
+            return await dmsDbContext.Files.AsNoTracking()
+                .FirstOrDefaultAsync(_ => _.FileId == id);
         }
 
         public async Task UpdateFileValues(int id, Action<File> valueUpdater)
