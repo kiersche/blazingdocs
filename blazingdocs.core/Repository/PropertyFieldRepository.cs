@@ -9,7 +9,8 @@ namespace blazingdocs.core.Repository
 {
     public interface IPropertyFieldRepository
     {
-        Task AddProperty(PropertyField propertyField);
+        Task AddPropertyField(PropertyField propertyField);
+        Task<List<PropertyField>> GetAllPropertyFields();
         Task UpdatePropertyFieldValues(int id, Action<PropertyField> valueUpdater);
     }
 
@@ -26,10 +27,15 @@ namespace blazingdocs.core.Repository
             this.entityPropertyUpdater.EntityFactoryFunc = id => new PropertyField { PropertyFieldId = id };
         }
 
-        public async Task AddProperty(PropertyField propertyField)
+        public async Task AddPropertyField(PropertyField propertyField)
         {
             dmsDbContext.Add<PropertyField>(propertyField);
             await dmsDbContext.SaveChangesAsync();
+        }
+
+        public async Task<List<PropertyField>> GetAllPropertyFields()
+        {
+            return await dmsDbContext.PropertyFields.AsNoTracking().ToListAsync();
         }
 
         public async Task UpdatePropertyFieldValues(int id, Action<PropertyField> valueUpdater)
