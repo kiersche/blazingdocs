@@ -4,16 +4,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace blazingdocs.Server.Controllers
 {
     [Route("api/[controller]")]
-    public class SampleDataController : Controller
+    public class WeatherForecastController : Controller
     {
         private static string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
+
+        private readonly ILogger<WeatherForecastController> logger;
+
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        {
+            this.logger = logger;
+        }
 
         [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
