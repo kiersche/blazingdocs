@@ -18,6 +18,6 @@ namespace blazingdocs.core.Model
         public List<Property> Properties { get; set; }
         public List<File> Files { get; set; }
 
-        public List<CategoryObject> CategoryObjects { get; set; }
+        public List<Category> Categorys { get; set; }
     }
 }
