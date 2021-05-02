@@ -12,7 +12,7 @@ namespace blazingdocs.core.Model
         public PhysicalObjectContainer PhysicalObjectContainer { get; set; }
         public int IndexInContainer { get; set; }
 
-        public int DocumentId { get; set; }
-        public Object Document { get; set; }
+        public int ObjectId { get; set; }
+        public Object Object { get; set; }
     }
 }
