@@ -10,7 +10,7 @@ namespace blazingdocs.core.Model
         public string FullPath { get; set; }
         public string Description { get; set; }
 
-        public int DocumentId { get; set; }
-        public Document Document { get; set; }
+        public int ObjectId { get; set; }
+        public Object Object { get; set; }
     }
 }

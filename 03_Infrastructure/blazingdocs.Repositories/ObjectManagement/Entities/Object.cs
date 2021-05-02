@@ -4,20 +4,20 @@ using System.Text;
 
 namespace blazingdocs.core.Model
 {
-    public class Document
+    public class Object
     {
-        public int DocumentId { get; set; }
+        public int ObjectId { get; set; }
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }
 
-        public PhysicalObject PhysicalDocument { get; set; }
+        public PhysicalObject PhysicalObject { get; set; }
 
-        public int? DocumentTypeId { get; set; }
-        public DocumentType DocumentType { get; set; }
+        public int? ObjectTypeId { get; set; }
+        public ObjectType ObjectType { get; set; }
 
         public List<Property> Properties { get; set; }
         public List<File> Files { get; set; }
 
-        public List<CategoryDocument> CategoryDocuments { get; set; }
+        public List<CategoryObject> CategoryObjects { get; set; }
     }
 }

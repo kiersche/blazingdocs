@@ -9,6 +9,6 @@ namespace blazingdocs.core.Model
         public int CategoryId { get; set; }
         public string Name { get; set; }
 
-        public List<CategoryDocument> CategoryDocuments { get; set; }
+        public List<CategoryObject> CategoryObjects { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace blazingdocs.core.Model
 
         public PropertyValue PropertyValue { get; set; }
 
-        public int DocumentId { get; set; }
-        public Document Document { get; set; }
+        public int ObjectId { get; set; }
+        public Object Object { get; set; }
     }
 }
