@@ -14,5 +14,7 @@ namespace blazingdocs.core.Model
         public int? ParentObjectTypeId { get; set; }
         public ObjectType Parent { get; set; }
         public ICollection<ObjectType> Children { get; set; }
+
+        public ICollection<Object> Objects { get; set; }
     }
 }
