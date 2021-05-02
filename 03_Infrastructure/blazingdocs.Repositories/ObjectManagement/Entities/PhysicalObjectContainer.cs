@@ -11,6 +11,6 @@ namespace blazingdocs.core.Model
 
         public int? ParentPhysicalObjectContainerId { get; set; }
         public PhysicalObjectContainer Parent { get; set; }
-        public List<PhysicalObjectContainer> Children { get; set; }
+        public ICollection<PhysicalObjectContainer> Children { get; set; }
     }
 }
