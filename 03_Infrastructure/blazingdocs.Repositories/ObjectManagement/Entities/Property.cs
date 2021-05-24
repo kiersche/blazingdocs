@@ -11,6 +11,7 @@ namespace blazingdocs.core.Model
         public int PropertyFieldId { get; set; }
         public PropertyField PropertyField { get; set; }
 
+        public int? PropertyValueId { get; set; }
         public PropertyValue PropertyValue { get; set; }
 
         public int ObjectId { get; set; }
