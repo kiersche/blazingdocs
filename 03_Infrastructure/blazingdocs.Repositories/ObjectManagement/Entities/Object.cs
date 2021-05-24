@@ -16,8 +16,9 @@ namespace blazingdocs.core.Model
         public ObjectType ObjectType { get; set; }
 
         public ICollection<Property> Properties { get; set; }
+        
         public ICollection<File> Files { get; set; }
 
-        public ICollection<Category> Categorys { get; set; }
+        public ICollection<Category> Categories { get; set; }
     }
 }

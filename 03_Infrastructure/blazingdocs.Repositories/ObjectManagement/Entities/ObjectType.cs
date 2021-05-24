@@ -11,7 +11,7 @@ namespace blazingdocs.core.Model
         
         public ICollection<PropertyField> PropertyFields { get; set; }
 
-        public int? ParentObjectTypeId { get; set; }
+        public int? ParentId { get; set; }
         public ObjectType Parent { get; set; }
         public ICollection<ObjectType> Children { get; set; }
 
