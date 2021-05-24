@@ -21,6 +21,8 @@ namespace blazingdocs.core.Model
         {
             if (optionsBuilder.IsConfigured)
                 return;
+
+            optionsBuilder.UseSqlServer(@"Server=localhost,1433\sql1dev;Database=blazingdocs;User Id=userDEV;Password=sk.bld01Dev#1;");
         }
 
         public DmsDbContext() { }
