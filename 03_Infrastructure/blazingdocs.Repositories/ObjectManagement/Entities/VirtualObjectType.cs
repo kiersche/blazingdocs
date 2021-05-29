@@ -4,7 +4,7 @@ using System.Text;
 
 namespace blazingdocs.core.Model
 {
-    public class ObjectType
+    public class VirtualObjectType
     {
         public int ObjectTypeId { get; set; }
         public string Name { get; set; }
@@ -12,9 +12,9 @@ namespace blazingdocs.core.Model
         public ICollection<PropertyField> PropertyFields { get; set; }
 
         public int? ParentId { get; set; }
-        public ObjectType Parent { get; set; }
-        public ICollection<ObjectType> Children { get; set; }
+        public VirtualObjectType Parent { get; set; }
+        public ICollection<VirtualObjectType> Children { get; set; }
 
-        public ICollection<Object> Objects { get; set; }
+        public ICollection<VirtualObject> Objects { get; set; }
     }
 }

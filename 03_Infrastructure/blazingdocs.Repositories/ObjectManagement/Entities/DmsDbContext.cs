@@ -8,22 +8,14 @@ namespace blazingdocs.core.Model
     public class DmsDbContext : DbContext
     {
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Object> Objects { get; set; }
-        public DbSet<ObjectType> ObjectTypes { get; set; }
+        public DbSet<VirtualObject> Objects { get; set; }
+        public DbSet<VirtualObjectType> ObjectTypes { get; set; }
         public DbSet<File> Files { get; set; }
         public DbSet<PhysicalObject> PhysicalObjects { get; set; }
         public DbSet<PhysicalObjectContainer> PhysicalObjectContainers { get; set; }
         public DbSet<Property> Properties { get; set; }
         public DbSet<PropertyField> PropertyFields { get; set; }
         public DbSet<PropertyValue> PropertyValues { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (optionsBuilder.IsConfigured)
-                return;
-
-            optionsBuilder.UseSqlServer(@"Server=localhost,1433\sql1dev;Database=blazingdocs;User Id=userDEV;Password=sk.bld01Dev#1;");
-        }
 
         public DmsDbContext() { }
 

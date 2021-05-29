@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace blazingdocs.core.Model
+﻿namespace blazingdocs.Domain.VirtualObjects
 {
     public class File
     {

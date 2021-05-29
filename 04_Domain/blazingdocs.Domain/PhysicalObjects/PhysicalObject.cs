@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using blazingdocs.Domain.VirtualObjects;
 
-namespace blazingdocs.core.Model
+namespace blazingdocs.Domain.PhysicalObjects
 {
     public class PhysicalObject
     {

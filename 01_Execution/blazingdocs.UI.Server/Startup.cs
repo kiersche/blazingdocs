@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using blazingdocs.Repositories;
 
 namespace blazingdocs.UI.Server
 {
@@ -25,6 +26,7 @@ namespace blazingdocs.UI.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddRepositories();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

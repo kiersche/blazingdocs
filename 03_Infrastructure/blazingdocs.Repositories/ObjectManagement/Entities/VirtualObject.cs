@@ -4,7 +4,7 @@ using System.Text;
 
 namespace blazingdocs.core.Model
 {
-    public class Object
+    public class VirtualObject
     {
         public int ObjectId { get; set; }
         public DateTime Created { get; set; }
@@ -13,7 +13,7 @@ namespace blazingdocs.core.Model
         public PhysicalObject PhysicalObject { get; set; }
 
         public int? ObjectTypeId { get; set; }
-        public ObjectType ObjectType { get; set; }
+        public VirtualObjectType ObjectType { get; set; }
 
         public ICollection<Property> Properties { get; set; }
         
