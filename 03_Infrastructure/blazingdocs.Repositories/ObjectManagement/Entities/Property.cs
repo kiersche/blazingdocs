@@ -14,7 +14,7 @@ namespace blazingdocs.core.Model
         public int? PropertyValueId { get; set; }
         public PropertyValue PropertyValue { get; set; }
 
-        public int ObjectId { get; set; }
-        public VirtualObject Object { get; set; }
+        public int VirtualObjectId { get; set; }
+        public VirtualObject VirtualObject { get; set; }
     }
 }

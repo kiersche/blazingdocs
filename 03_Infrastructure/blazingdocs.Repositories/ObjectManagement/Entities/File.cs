@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace blazingdocs.core.Model
+﻿namespace blazingdocs.core.Model
 {
     public class File
     {
@@ -10,7 +6,7 @@ namespace blazingdocs.core.Model
         public string FullPath { get; set; }
         public string Description { get; set; }
 
-        public int ObjectId { get; set; }
-        public VirtualObject Object { get; set; }
+        public int VirtualObjectId { get; set; }
+        public VirtualObject VirtualObject { get; set; }
     }
 }

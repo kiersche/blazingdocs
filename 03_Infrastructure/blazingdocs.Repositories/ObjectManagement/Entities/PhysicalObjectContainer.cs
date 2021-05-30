@@ -10,7 +10,9 @@ namespace blazingdocs.core.Model
         public string Name { get; set; }
 
         public int? ParentId { get; set; }
-        public PhysicalObjectContainer Parent { get; set; }
+        public PhysicalObjectContainer? Parent { get; set; }
         public ICollection<PhysicalObjectContainer> Children { get; set; }
+
+        public ICollection<PhysicalObject> PhysicalObjects { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace blazingdocs.Domain
+namespace blazingdocs.ApplicationServices
 {
     public class Class1
     {

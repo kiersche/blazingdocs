@@ -6,14 +6,14 @@ namespace blazingdocs.core.Model
 {
     public class VirtualObject
     {
-        public int ObjectId { get; set; }
+        public int VirtualObjectId { get; set; }
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }
 
         public PhysicalObject PhysicalObject { get; set; }
 
-        public int? ObjectTypeId { get; set; }
-        public VirtualObjectType ObjectType { get; set; }
+        public int? VirtualObjectTypeId { get; set; }
+        public VirtualObjectType VirtualObjectType { get; set; }
 
         public ICollection<Property> Properties { get; set; }
         

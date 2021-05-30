@@ -6,7 +6,7 @@ namespace blazingdocs.core.Model
 {
     public class VirtualObjectType
     {
-        public int ObjectTypeId { get; set; }
+        public int VirtualObjectTypeId { get; set; }
         public string Name { get; set; }
         
         public ICollection<PropertyField> PropertyFields { get; set; }
