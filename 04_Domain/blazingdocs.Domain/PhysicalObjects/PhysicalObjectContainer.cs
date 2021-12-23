@@ -6,5 +6,6 @@ namespace blazingdocs.Domain.PhysicalObjects
         PhysicalObjectContainerId PhysicalObjectContainerId,
         PhysicalObjectContainerName Name,
         PhysicalObjectContainer? Parent,
-        IEnumerable<PhysicalObjectContainer>? Children);
+        IEnumerable<PhysicalObjectContainer> Children,
+        IEnumerable<PhysicalObject> PhysicalObjects);
 }

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace blazingdocs.core.Model
 {
     public class Category
     {
         public int CategoryId { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
-        public ICollection<VirtualObject> Objects { get; set; }
+        public ICollection<VirtualObject> Objects { get; set; } = null!;
     }
 }

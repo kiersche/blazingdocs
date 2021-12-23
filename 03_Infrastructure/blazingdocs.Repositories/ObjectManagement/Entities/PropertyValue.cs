@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace blazingdocs.core.Model
 {
@@ -8,7 +6,7 @@ namespace blazingdocs.core.Model
     {
         public int PropertyValueId { get; set; }
 
-        public Property Property { get; set; }
+        public Property Property { get; set; } = null!;
 
         //PropertyType { Text, Number, Float, Money, Date, DateTime }
         public string? TextValue { get; set; }
