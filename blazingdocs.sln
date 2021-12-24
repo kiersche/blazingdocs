@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazingdocs.Domain", "04_Domain\blazingdocs.Domain\blazingdocs.Domain.csproj", "{5852284D-5324-4C0C-8874-72EF69F37DE8}"
 EndProject
@@ -26,7 +26,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazingdocs.UI.Server", "01
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazingdocs.UI.Client", "01_Execution\blazingdocs.UI.Client\blazingdocs.UI.Client.csproj", "{EB26A0BA-15F3-4433-B842-0A282BC588E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazingdocs.ApplicationServices", "02_Application\blazingdocs.ApplicationServices\blazingdocs.ApplicationServices.csproj", "{8E4F3059-F0BF-41EE-967B-6ADBC983793C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazingdocs.ApplicationServices", "02_Application\blazingdocs.ApplicationServices\blazingdocs.ApplicationServices.csproj", "{8E4F3059-F0BF-41EE-967B-6ADBC983793C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

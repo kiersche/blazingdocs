@@ -1,8 +1,9 @@
 ﻿using blazingdocs.core.Model;
+using blazingdocs.Domain;
 using System;
 using System.Threading.Tasks;
 
-namespace blazingdocs.Repositories.ObjectManagement
+namespace blazingdocs.Repositories
 {
     internal class ObjectRepository : IObjectRepository
     {

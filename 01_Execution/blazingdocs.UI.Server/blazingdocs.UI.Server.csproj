@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\02_Application\blazingdocs.ApplicationServices\blazingdocs.ApplicationServices.csproj" />
     <ProjectReference Include="..\..\02_Application\blazingdocs.Contracts\blazingdocs.Contracts.csproj" />
     <ProjectReference Include="..\..\03_Infrastructure\blazingdocs.Repositories\blazingdocs.Repositories.csproj" />
     <ProjectReference Include="..\blazingdocs.UI.Client\blazingdocs.UI.Client.csproj" />

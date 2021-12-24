@@ -2,7 +2,7 @@
 using blazingdocs.Domain.VirtualObjects;
 using System.Threading.Tasks;
 
-namespace blazingdocs.Repositories.ObjectManagement
+namespace blazingdocs.Domain
 {
     public interface IObjectRepository
     {
