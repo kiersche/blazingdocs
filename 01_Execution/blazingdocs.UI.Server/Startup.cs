@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using System.Linq;
 using blazingdocs.Repositories;
 using blazingdocs.ApplicationServices;
+using blazingdocs.Contracts;
 
 namespace blazingdocs.UI.Server
 {
@@ -24,6 +25,8 @@ namespace blazingdocs.UI.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<ConfigurationContract>(Configuration);
+
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddRepositories();
@@ -31,7 +34,7 @@ namespace blazingdocs.UI.Server
 
             services.AddAutoMapper(
                 typeof(Repositories.ServiceCollectionExtensions).Assembly,
-                typeof(Contracts.ConfigurationMappingProfile).Assembly);
+                typeof(ConfigurationMappingProfile).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

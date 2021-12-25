@@ -1,9 +1,4 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace blazingdocs.Contracts
 {
@@ -12,7 +7,8 @@ namespace blazingdocs.Contracts
         public ConfigurationMappingProfile()
         {
             CreateMap<Domain.StorageRootPath, string>().ConvertUsing(srp => srp.Value);
-            CreateMap<Domain.Configuration, ConfigurationContract>();
+            CreateMap<string, Domain.StorageRootPath>().ConvertUsing(srp => new Domain.StorageRootPath(srp));
+            CreateMap<Domain.Configuration, ConfigurationContract>().ReverseMap();
         }
     }
 }

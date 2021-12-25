@@ -2,6 +2,7 @@
 using blazingdocs.Contracts;
 using blazingdocs.Domain;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 
 namespace blazingdocs.UI.Server.Controllers
@@ -9,22 +10,18 @@ namespace blazingdocs.UI.Server.Controllers
     [ApiController]
     public class ConfigurationController : Controller
     {
-        private readonly IConfigurationApplicationService configurationApplicationService;
-        private readonly IMapper mapper;
+        private readonly IOptionsMonitor<ConfigurationContract> options;
 
         public ConfigurationController(
-            IConfigurationApplicationService configurationApplicationService,
-            IMapper mapper)
+            IOptionsMonitor<ConfigurationContract> options)
         {
-            this.configurationApplicationService = configurationApplicationService;
-            this.mapper = mapper;
+            this.options = options;
         }
 
         [HttpGet]
-        public async Task<ConfigurationContract> Get()
+        public ConfigurationContract Get()
         {
-            Configuration configuration = await configurationApplicationService.GetConfigurationAsync();
-            return mapper.Map<ConfigurationContract>(configuration);
+            return options.CurrentValue;
         }
     }
 }

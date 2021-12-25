@@ -1,5 +1,4 @@
-﻿using blazingdocs.Domain;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace blazingdocs.ApplicationServices
 {
@@ -7,7 +6,7 @@ namespace blazingdocs.ApplicationServices
     {
         public static void AddApplicationServices(this IServiceCollection services)
         {
-            services.AddTransient<IConfigurationApplicationService, ConfigurationApplicationService>();
+            
         }
     }
 }
