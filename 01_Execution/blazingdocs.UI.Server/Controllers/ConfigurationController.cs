@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace blazingdocs.UI.Server.Controllers
 {
     [ApiController]
+    [Route("[controller]")]
     public class ConfigurationController : Controller
     {
         private readonly IOptionsMonitor<ConfigurationContract> options;

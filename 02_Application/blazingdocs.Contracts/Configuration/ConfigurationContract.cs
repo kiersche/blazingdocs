@@ -1,4 +1,7 @@
 ﻿namespace blazingdocs.Contracts
 {
-    public record ConfigurationContract(string StorageRootPath);
+    public class ConfigurationContract
+    {
+        public string StorageRootPath { get; set; } = null!;
+    }
 }
