@@ -6,20 +6,21 @@ namespace blazingdocs.UI.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ConfigurationController : Controller
+    public class FileController : Controller
     {
         private readonly IOptionsMonitor<ConfigurationContract> options;
 
-        public ConfigurationController(
-            IOptionsMonitor<ConfigurationContract> options)
+        public FileController(IOptionsMonitor<ConfigurationContract> options)
         {
             this.options = options;
         }
 
-        [HttpGet]
-        public ConfigurationContract Get()
+        public IActionResult Index()
         {
-            return options.CurrentValue;
+            return View();
         }
+
+        [HttpGet("list-unassigned")]
+        public 
     }
 }

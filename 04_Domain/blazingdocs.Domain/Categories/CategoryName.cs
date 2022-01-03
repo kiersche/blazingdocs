@@ -1,4 +1,4 @@
-﻿namespace blazingdocs.Domain.Categories
+﻿namespace blazingdocs.Domain
 {
-    public record CategoryName(string value);
+    public record CategoryName(string Value);
 }

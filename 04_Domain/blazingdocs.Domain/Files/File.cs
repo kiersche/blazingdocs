@@ -1,8 +1,6 @@
-﻿namespace blazingdocs.Domain.Files
+﻿namespace blazingdocs.Domain
 {
     public record File(
-        FileId? FileId,
-        FullPath FullPath,
         OriginalFilename OriginalFilename,
         FileDescription? Description);
 }

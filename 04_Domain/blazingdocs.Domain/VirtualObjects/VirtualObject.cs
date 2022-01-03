@@ -1,6 +1,4 @@
-﻿using blazingdocs.Domain.Categories;
-using blazingdocs.Domain.Files;
-using blazingdocs.Domain.PhysicalObjects;
+﻿using blazingdocs.Domain.PhysicalObjects;
 using blazingdocs.Domain.Propertys;
 using blazingdocs.Domain.VirtualObjectTypes;
 using System.Collections.Generic;

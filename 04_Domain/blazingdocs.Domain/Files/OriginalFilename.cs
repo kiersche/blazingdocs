@@ -1,4 +1,4 @@
-﻿namespace blazingdocs.Domain.Files
+﻿namespace blazingdocs.Domain
 {
     public record OriginalFilename(string Value);
 }
