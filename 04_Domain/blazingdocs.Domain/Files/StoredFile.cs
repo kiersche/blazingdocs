@@ -2,7 +2,7 @@
 {
     public record StoredFile(
         FileId? FileId,
-        FullPath FullPath,
+        RelativePath RelativePath,
         OriginalFilename OriginalFilename,
         FileDescription? Description) : File(OriginalFilename, Description);
 }

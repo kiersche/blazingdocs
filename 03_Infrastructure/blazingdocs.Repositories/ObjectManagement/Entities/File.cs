@@ -3,7 +3,7 @@
     public class File
     {
         public int FileId { get; set; }
-        public string FullPath { get; set; } = null!;
+        public string RelativePath { get; set; } = null!;
         public string? Description { get; set; }
         public string OriginalFilename { get; set; } = null!;
 

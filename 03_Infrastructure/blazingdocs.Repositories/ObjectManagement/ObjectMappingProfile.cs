@@ -9,7 +9,7 @@ namespace blazingdocs.Repositories.ObjectManagement
         {
             CreateMap<Domain.File, File>()
                 .ForMember(file => file.FileId, opt => opt.Ignore())
-                .ForMember(file => file.FullPath, opt => opt.Ignore())
+                .ForMember(file => file.RelativePath, opt => opt.Ignore())
                 .ForMember(file => file.VirtualObjectId, opt => opt.Ignore())
                 .ForMember(file => file.VirtualObject, opt => opt.Ignore());
 
