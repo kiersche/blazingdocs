@@ -9,6 +9,7 @@ using System.Linq;
 using blazingdocs.Repositories;
 using blazingdocs.ApplicationServices;
 using blazingdocs.Contracts;
+using blazingdocs.Repositories.Files;
 
 namespace blazingdocs.UI.Server
 {
@@ -25,7 +26,7 @@ namespace blazingdocs.UI.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<ConfigurationContract>(Configuration);
+            services.Configure<FileStorageConfiguration>(Configuration);
 
             services.AddControllersWithViews();
             services.AddRazorPages();
