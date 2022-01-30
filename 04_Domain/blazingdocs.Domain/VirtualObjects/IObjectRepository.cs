@@ -1,5 +1,4 @@
-﻿using blazingdocs.Domain.Categories;
-using blazingdocs.Domain.VirtualObjects;
+﻿using blazingdocs.Domain.VirtualObjects;
 using System.Threading.Tasks;
 
 namespace blazingdocs.Domain
