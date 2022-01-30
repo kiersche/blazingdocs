@@ -14,7 +14,7 @@ namespace blazingdocs.Repositories
             this.dbContext = dbContext;
         }
 
-        public Task SaveCategoryAsync(Domain.Categories.Category category)
+        public Task SaveCategoryAsync(Domain.Category category)
         {
             throw new NotImplementedException();
         }
