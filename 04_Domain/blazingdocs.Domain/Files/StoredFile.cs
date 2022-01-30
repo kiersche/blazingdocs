@@ -1,7 +1,7 @@
 ﻿namespace blazingdocs.Domain
 {
     public record StoredFile(
-        FileId? FileId,
+        FileId FileId,
         RelativePath RelativePath,
         OriginalFilename OriginalFilename,
         FileDescription? Description) : File(OriginalFilename, Description);

@@ -23,5 +23,10 @@ namespace blazingdocs.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task<StoredFile> SaveFileAsync(StoredFileFactory storedFileFactory)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

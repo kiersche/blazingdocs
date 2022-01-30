@@ -8,5 +8,7 @@ namespace blazingdocs.Domain
         Task SaveVirtualObjectAsync(VirtualObject virtualObject);
 
         Task SaveCategoryAsync(Category category);
+
+        Task<StoredFile> SaveFileAsync(StoredFileFactory storedFileFactory);
     }
 }
