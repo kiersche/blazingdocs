@@ -2,6 +2,7 @@
 using blazingdocs.Domain;
 using System;
 using System.Threading.Tasks;
+using File = blazingdocs.core.Model.File;
 
 namespace blazingdocs.Repositories
 {
@@ -24,9 +25,12 @@ namespace blazingdocs.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<StoredFile> SaveFileAsync(StoredFileFactory storedFileFactory)
+        public async Task<StoredFile> SaveFileAsync(StoredFileFactory storedFileFactory)
         {
-            throw new NotImplementedException();
+            File file = File.FromStoredFileFactory(storedFileFactory);
+            await dbContext.AddAsync(file);
+            await dbContext.SaveChangesAsync();
+            return storedFileFactory.ToStoredFile(new FileId(file.FileId));
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace blazingdocs.core.Model
+﻿using blazingdocs.Domain;
+
+namespace blazingdocs.core.Model
 {
     public class File
     {
@@ -9,5 +11,15 @@
 
         public int? VirtualObjectId { get; set; }
         public VirtualObject? VirtualObject { get; set; }
+
+        public static File FromStoredFileFactory(StoredFileFactory storageCandidate)
+        {
+            return new File
+            {
+                RelativePath = storageCandidate.RelativePath.Value,
+                Description = storageCandidate.Description?.Value,
+                OriginalFilename = storageCandidate.OriginalFilename.Value
+            };
+        }
     }
 }

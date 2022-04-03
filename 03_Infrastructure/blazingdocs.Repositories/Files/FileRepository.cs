@@ -30,7 +30,7 @@ namespace blazingdocs.Repositories.Files
 
             Directory.CreateDirectory(fullDestinationDirectory);
             await using FileStream fileStream = new(fullDestinationPath, FileMode.CreateNew);
-            await fileStream.CopyToAsync(fileStream);
+            await file.CopyToAsync(fileStream);
 
             return new RelativePath(relativeDestinationPath);
         }
