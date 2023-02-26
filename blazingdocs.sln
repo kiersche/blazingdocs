@@ -18,6 +18,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{187AC65F-C0F3-4506-85EC-46AE3D3C3FBE}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.build.props = Directory.build.props
+		Directory.Packages.props = Directory.Packages.props
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazingdocs.Contracts", "02_Application\blazingdocs.Contracts\blazingdocs.Contracts.csproj", "{DE6211DC-0845-4DB2-AB5B-7300A9497D15}"
