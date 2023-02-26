@@ -24,9 +24,9 @@ public class FileController : Controller
         return View();
     }
 
-    [HttpPost]
-    public async Task<ActionResult<List<FileUploadResultContract>>> PostFile([FromForm] IEnumerable<IFormFile> files)
-    {
+    //[HttpPost]
+    //public async Task<ActionResult<List<FileUploadResultContract>>> PostFile([FromForm] IEnumerable<IFormFile> files)
+    //{
 
-    }
+    //}
 }
