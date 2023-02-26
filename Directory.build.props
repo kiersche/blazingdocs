@@ -1,5 +1,12 @@
 <Project>
- <PropertyGroup>
-   <Nullable>enable</Nullable>
- </PropertyGroup>
+	<PropertyGroup>
+		<Nullable>enable</Nullable>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<GenerateRuntimeConfigurationFiles>True</GenerateRuntimeConfigurationFiles>
+	</PropertyGroup>
+
 </Project>
