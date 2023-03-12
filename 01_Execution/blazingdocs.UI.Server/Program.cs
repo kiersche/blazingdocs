@@ -1,26 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using blazingdocs.Repositories;
+using blazingdocs.ApplicationServices;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using blazingdocs.Contracts;
+using blazingdocs.Repositories.Files;
 
-namespace blazingdocs.UI.Server
+namespace blazingdocs.UI.Server;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
+        var builder = WebApplication.CreateBuilder(args);
+
+        // Add services to the container.
+
+        builder.Services.AddControllersWithViews();
+        builder.Services.AddRazorPages();
+        builder.Services.AddRepositories();
+        builder.Services.AddApplicationServices();
+        builder.Services.AddAutoMapper(
+            typeof(Repositories.ServiceCollectionExtensions).Assembly,
+            typeof(ConfigurationMappingProfile).Assembly);
+
+        builder.Services.Configure<FileStorageConfiguration>(builder.Configuration);
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
         {
-            CreateHostBuilder(args).Build().Run();
+            app.UseWebAssemblyDebugging();
+        }
+        else
+        {
+            app.UseExceptionHandler("/Error");
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseHsts();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+        app.UseHttpsRedirection();
+
+        app.UseBlazorFrameworkFiles();
+        app.UseStaticFiles();
+
+        app.UseRouting();
+
+
+        app.MapRazorPages();
+        app.MapControllers();
+        app.MapFallbackToFile("index.html");
+
+        app.Run();
     }
 }
