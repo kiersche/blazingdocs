@@ -14,7 +14,7 @@ früheren, breiteren Idee zur Verwaltung beliebiger Gegenstände.
 
 ## Orientierung im Repository
 
-- `blazingdocs.sln`: Solution im Repository-Hauptverzeichnis.
+- `blazingdocs.slnx`: Solution im Repository-Hauptverzeichnis.
 - `01_Execution/`: Web-Host und React-Client (Vite und TypeScript).
 - `02_Application/`: Application Services und Contracts.
 - `03_Infrastructure/`: Repositories, EF-Core-Persistenz und Dateispeicherung.
@@ -24,7 +24,7 @@ früheren, breiteren Idee zur Verwaltung beliebiger Gegenstände.
 
 Dies ist eine Navigationshilfe, keine Vorgabe, die vorhandene Architektur zu
 erhalten. Prüfe für eine konkrete Aufgabe den aktuellen Code und die
-Projektdateien. Build-, Start- und Testbefehle sind noch nicht verifiziert.
+Projektdateien. Build, Start und lokale Konfiguration sind in der [README.md](README.md) beschrieben.
 
 ## Zusammenarbeit
 

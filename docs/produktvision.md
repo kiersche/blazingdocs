@@ -46,9 +46,7 @@ eingebetteter Dokument-Viewer ist ein zentraler Teil des Zielbilds.
 
 ## Technische Ausgangslage und Entwicklungsrichtung
 
-- Das Backend basiert auf C#; eine Modernisierung auf .NET 10 und zeitgemäßes
-  EF Core ist gewünscht, einschließlich einer Prüfung der Projekt- und
-  Solution-Struktur sowie unnötiger Modellierungsarbeit.
+- Das Backend verwendet C# mit .NET 11 und EF Core 11.
 - Das Browser-Frontend verwendet React mit Vite und TypeScript. Die erste Dokumentansicht öffnet lokal ausgewählte PDFs.
 - Bisher wurde SQL Server mit EF Core vorgesehen. Eine andere Datenbank ist
   möglich; es gibt noch keine neue Auswahlentscheidung.

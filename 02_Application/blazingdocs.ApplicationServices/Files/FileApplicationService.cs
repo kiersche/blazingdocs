@@ -1,5 +1,5 @@
-﻿using blazingdocs.Domain;
-using Microsoft.AspNetCore.Http;
+using System.IO;
+using blazingdocs.Domain;
 using System.Threading.Tasks;
 
 namespace blazingdocs.ApplicationServices.Files;
@@ -15,7 +15,7 @@ internal class FileApplicationService : IFileApplicationService
         this.fileRepository = fileRepository;
     }
 
-    public async Task<StoredFile> StoreFileAsync(File fileDescriptor, IFormFile fileContent)
+    public async Task<StoredFile> StoreFileAsync(Domain.File fileDescriptor, Stream fileContent)
     {
         RelativePath relativeStoredPath = await fileRepository.StoreFile(fileContent);
 

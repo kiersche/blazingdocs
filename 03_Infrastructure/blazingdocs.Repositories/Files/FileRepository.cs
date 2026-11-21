@@ -1,60 +1,36 @@
-﻿using blazingdocs.Domain;
-using Microsoft.AspNetCore.Http;
+using blazingdocs.Domain;
 using Microsoft.Extensions.Options;
-using System;
+using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace blazingdocs.Repositories.Files
+namespace blazingdocs.Repositories.Files;
+
+internal class FileRepository : IFileRepository
 {
-    internal class FileRepository : IFileRepository
+    private readonly FileStorageConfiguration storage;
+    private readonly IDateTimeProvider dateTimeProvider;
+
+    public FileRepository(IOptions<FileStorageConfiguration> options, IDateTimeProvider dateTimeProvider)
     {
-        private readonly string storageRootPath;
-        private readonly IDateTimeProvider dateTimeProvider;
+        storage = options.Value;
+        this.dateTimeProvider = dateTimeProvider;
+    }
 
-        public FileRepository(IOptions<FileStorageConfiguration> options, IDateTimeProvider dateTimeProvider)
+    public async Task<RelativePath> StoreFile(Stream file)
+    {
+        string directory = dateTimeProvider.Today.ToString("yyyy'/'MM'/'dd", CultureInfo.InvariantCulture);
+        RelativePath relativePath;
+        string destination;
+        do
         {
-            storageRootPath = options.Value.StorageRootPath;
-            this.dateTimeProvider = dateTimeProvider;
-        }
+            relativePath = new RelativePath($"{directory}/{Path.GetRandomFileName()}");
+            destination = storage.Resolve(relativePath);
+        } while (System.IO.File.Exists(destination));
 
-        public async Task<RelativePath> StoreFile(IFormFile file)
-        {
-            string relativeDestinationDirectory = GetRelativeDestinationDirectory();
-            string fullDestinationDirectory = Path.Combine(storageRootPath, relativeDestinationDirectory);
-
-            string destinationFilename = GetDestinationFilename(relativeDestinationDirectory);
-            string relativeDestinationPath = Path.Combine(relativeDestinationDirectory, destinationFilename);
-            string fullDestinationPath = Path.Combine(storageRootPath, relativeDestinationPath);
-
-            Directory.CreateDirectory(fullDestinationDirectory);
-            await using FileStream fileStream = new(fullDestinationPath, FileMode.CreateNew);
-            await file.CopyToAsync(fileStream);
-
-            return new RelativePath(relativeDestinationPath);
-        }
-
-        private string GetDestinationFilename(string relativeDirectory)
-        {
-            string filename = Path.GetRandomFileName();
-            string relativeDestinationPath = Path.Combine(relativeDirectory, filename);
-
-            while (System.IO.File.Exists(Path.Combine(storageRootPath, relativeDestinationPath)))
-            {
-                filename = Path.GetRandomFileName();
-                relativeDestinationPath = Path.Combine(relativeDirectory, filename);
-            }
-
-            return filename;
-        }
-
-        private string GetRelativeDestinationDirectory()
-        {
-            DateOnly today = dateTimeProvider.Today;
-            return Path.Combine(
-                today.Year.ToString("D"),
-                today.Month.ToString("D2"),
-                today.Day.ToString("D2"));
-        }
+        Directory.CreateDirectory(Path.GetDirectoryName(destination)!);
+        await using var output = new FileStream(destination, FileMode.CreateNew);
+        await file.CopyToAsync(output);
+        return relativePath;
     }
 }

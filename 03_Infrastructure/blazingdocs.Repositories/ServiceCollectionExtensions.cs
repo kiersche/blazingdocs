@@ -1,4 +1,4 @@
-﻿using blazingdocs.core.Model;
+using blazingdocs.core.Model;
 using blazingdocs.Domain;
 using blazingdocs.Repositories.Files;
 using Microsoft.EntityFrameworkCore;
@@ -8,9 +8,9 @@ namespace blazingdocs.Repositories;
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddRepositories(this IServiceCollection services)
+    public static void AddRepositories(this IServiceCollection services, string? connectionString)
     {
-        services.AddDbContext<DmsDbContext>(options => options.UseSqlServer(@"Server=localhost,1433\sql1dev;Database=blazingdocs;User Id=userDEV;Password=sk.bld01Dev#1;"));
+        services.AddDbContext<DmsDbContext>(options => options.UseSqlServer(connectionString ?? throw new System.InvalidOperationException("Configure ConnectionStrings:Blazingdocs to use SQL Server.")));
         services.AddTransient<IObjectRepository, ObjectRepository>();
         services.AddTransient<IFileRepository, FileRepository>();
     }

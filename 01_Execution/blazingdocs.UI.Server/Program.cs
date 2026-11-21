@@ -3,8 +3,9 @@ using blazingdocs.ApplicationServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using blazingdocs.Contracts;
+using Microsoft.Extensions.Configuration;
 using blazingdocs.Repositories.Files;
+using System.IO;
 
 namespace blazingdocs.UI.Server;
 
@@ -18,13 +19,15 @@ public class Program
 
         builder.Services.AddControllersWithViews();
         builder.Services.AddRazorPages();
-        builder.Services.AddRepositories();
+        builder.Services.AddRepositories(builder.Configuration.GetConnectionString("Blazingdocs"));
         builder.Services.AddApplicationServices();
-        builder.Services.AddAutoMapper(
-            typeof(Repositories.ServiceCollectionExtensions).Assembly,
-            typeof(ConfigurationMappingProfile).Assembly);
 
-        builder.Services.Configure<FileStorageConfiguration>(builder.Configuration);
+        builder.Services.AddOptions<FileStorageConfiguration>()
+            .Bind(builder.Configuration)
+            .Validate(options => !string.IsNullOrWhiteSpace(options.StorageRootPath) &&
+                                 Path.IsPathFullyQualified(options.StorageRootPath),
+                      "StorageRootPath must be an absolute directory path.")
+            .ValidateOnStart();
 
         var app = builder.Build();
 
