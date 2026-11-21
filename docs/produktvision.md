@@ -49,14 +49,12 @@ eingebetteter Dokument-Viewer ist ein zentraler Teil des Zielbilds.
 - Das Backend basiert auf C#; eine Modernisierung auf .NET 10 und zeitgemäßes
   EF Core ist gewünscht, einschließlich einer Prüfung der Projekt- und
   Solution-Struktur sowie unnötiger Modellierungsarbeit.
-- Bisher wurde Blazor als Frontend verwendet. Ein modernes JavaScript-Framework
-  ist eine Option; Framework und Einsatz von TypeScript sind noch offen.
+- Das Browser-Frontend verwendet React mit Vite und TypeScript. Die erste Dokumentansicht öffnet lokal ausgewählte PDFs.
 - Bisher wurde SQL Server mit EF Core vorgesehen. Eine andere Datenbank ist
   möglich; es gibt noch keine neue Auswahlentscheidung.
 - Backend-Funktionen und Frontend sollen vervollständigt werden.
 
-Diese Punkte sind Entwicklungswünsche, keine bereits beschlossenen
-Implementierungsdetails oder unmittelbaren Arbeitsaufträge.
+Weitere Modernisierungsschritte werden einzeln beauftragt.
 
 ## Betrieb und Datensicherung
 

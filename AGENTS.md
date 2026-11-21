@@ -15,7 +15,7 @@ früheren, breiteren Idee zur Verwaltung beliebiger Gegenstände.
 ## Orientierung im Repository
 
 - `blazingdocs.sln`: Solution im Repository-Hauptverzeichnis.
-- `01_Execution/`: Web-Host und bisheriger Blazor-Client.
+- `01_Execution/`: Web-Host und React-Client (Vite und TypeScript).
 - `02_Application/`: Application Services und Contracts.
 - `03_Infrastructure/`: Repositories, EF-Core-Persistenz und Dateispeicherung.
 - `04_Domain/`: bisheriges Domänenmodell.
@@ -31,7 +31,7 @@ Projektdateien. Build-, Start- und Testbefehle sind noch nicht verifiziert.
 - Unterscheide aktuellen Implementierungsstand, Produktziele und offene Ideen.
 - Die langfristigen Wünsche autorisieren keine umfassende Modernisierung oder
   Umstrukturierung ohne einen entsprechenden Arbeitsauftrag.
-- C# als Backend ist die Ausgangsbasis. Frontend, Datenbank, Suchtechnik und
+- C# als Backend ist die Ausgangsbasis. Datenbank, Suchtechnik und
   Deployment sind noch nicht abschließend für die Weiterentwicklung entschieden.
 - Berücksichtige bei Architekturentscheidungen den gewünschten privaten Betrieb
   auf einem Raspberry Pi sowie Dateispeicherung auf NAS oder lokaler Platte.

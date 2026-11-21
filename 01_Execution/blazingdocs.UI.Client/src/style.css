@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f4ef; color: #233832; font: 1rem/1.55 "Segoe UI", sans-serif; }
+header { background: #203d34; color: white; padding: 1rem 4vw; font-size: 1.3rem; font-weight: 650; }
+main { display: grid; grid-template-columns: minmax(14rem, 1fr) minmax(0, 3fr); gap: 3vw; padding: 4vw; max-width: 96rem; margin: auto; }
+h1, h2 { font-family: Georgia, serif; font-weight: 500; margin-top: 0; }
+h1 { font-size: clamp(1.6rem, 2.5vw, 2.5rem); }
+.choose, button, select { border: 1px solid #83978e; border-radius: .4rem; padding: .55rem .9rem; font: inherit; background: white; cursor: pointer; }
+.choose { position: relative; display: inline-block; background: #285e4d; color: white; }
+.choose input { position: absolute; inset: 0; width: 100%; opacity: 0; cursor: pointer; }
+.choose:focus-within { outline: 3px solid #487daa; outline-offset: 3px; }
+dt { color: #58685f; margin-top: 1.3rem; }
+dd { margin: .2rem 0; overflow-wrap: anywhere; }
+section { min-width: 0; border: 1px solid #c9cec6; background: #e6e9e1; border-radius: .6rem; overflow: hidden; }
+.empty { min-height: 55vh; display: grid; align-content: center; text-align: center; }
+.empty h2, .empty p { margin: .25rem; }
+.toolbar { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; padding: .75rem; background: white; }
+.toolbar select { margin-left: auto; }
+.paper { overflow: auto; max-height: 77vh; }
+@media (max-width: 700px) { main { grid-template-columns: 1fr; } }

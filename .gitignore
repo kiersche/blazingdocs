@@ -328,3 +328,4 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/01_Execution/blazingdocs.UI.Server/wwwroot/client/
